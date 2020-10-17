@@ -19,7 +19,7 @@ public class AnimActivator : MonoBehaviour
         
         if (buildingAnim != null)
         {
-        float targetDistance = (target.transform.position - hands.transform.position).magnitude;
+        float targetDistance = (target.transform.position.y - hands.transform.position.y);
         float desiredFrame = ExtensionMethods.Remap(targetDistance, 1, 5, 0, 1);
         buildingAnim.Play("Crumble", 0, desiredFrame);
         }

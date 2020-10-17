@@ -16,7 +16,7 @@ public struct Gesture
 
 public class GestureDetector : MonoBehaviour
 {
-    public float threshold = 0.4f;
+    private float threshold = 0.05f;
     public OVRSkeleton skeleton;
     public List<Gesture> gestures;
     public bool debugMode = true;
@@ -53,6 +53,7 @@ public class GestureDetector : MonoBehaviour
 
     void Save()
     {
+        fingerBones = new List<OVRBone>(skeleton.Bones);
         Gesture g = new Gesture();
         g.name = "New Gesture";
         List<Vector3> data = new List<Vector3>();
